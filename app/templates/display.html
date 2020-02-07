@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Graphical View</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <style>
+        .single-chart {
+            max-width: 300px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Visual marksheet
+    </h2>
+    <div id="all-charts">
+        <!-- <div id="c-1" class="ct-chart ct-perfect-fourth single-chart"></div> -->
+
+        {% for legend in legends %}
+        <div id="s-{{  loop.index }}" class="ct-chart ct-perfect-fourth single-chart"></div>
+        {% endfor %}
+
+    </div>
+<script>
+    {% for value in values %}
+    var singleChartData = new Chartist.Pie('#s-{{loop.index}}', {
+    labels: [1, 2, 3, 4, 5, 6, 7],
+    series: [10, 20, 50, 20, 5, 50, 15],
+    }, {
+    donut: true,
+    showLabel: true
+    });
+{%endfor%}
+</script>
+</body>
+</html>
