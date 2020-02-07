@@ -4,3 +4,4 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 MarkupSafe==1.1.1
 Werkzeug==0.16.1
+excel2json-3==0.1.6
