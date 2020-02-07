@@ -17,5 +17,5 @@ def upload():
         convert_from_file(save_path)
         marks_in_json = save_path.split('.')[0] = '.json'
         os.rename('Sheet1.json', marks_in_json)
-        return redirect('/ping')
-    render_template('upload.html')
+        return redirect('/display')
+    return render_template('upload.html')
